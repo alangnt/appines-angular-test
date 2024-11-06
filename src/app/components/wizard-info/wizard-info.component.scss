@@ -6,7 +6,7 @@
     @apply flex flex-col text-[#DBE6E9] font-['Montserrat'] min-h-screen;
 
     .back {
-        @apply flex items-center justify-center w-8 h-8 sm:w-12 sm:h-12 absolute top-4 left-4 sm:top-8 sm:left-8 z-20 bg-[#2f4d53] border-[1px] border-[#1e424a] rounded-md;
+        @apply flex items-center justify-center w-8 h-8 sm:w-12 sm:h-12 fixed top-4 left-4 sm:top-8 sm:left-8 z-20 bg-[#2f4d53] border-[1px] border-[#1e424a] rounded-md;
     }
 
     .image-container {
