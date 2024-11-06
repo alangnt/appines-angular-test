@@ -1,6 +1,8 @@
 
 # App'Ines Technical Test (Angular + Ionic / Typescript / TailwindCSS)
 
+Vous trouverez ci-dessous les consignes pour installer et exécuter le projet. J'ai également pris la liberté de déployer le site web sur Vercel pour une plus grande liberté de test, avec le lien disponible sur le repo. La version PC comporte une erreur au niveau des images, car elles sont toutes de tailles différentes et par conséquent certaines ne s'affichent pas correctement. Aucun souci du côté tablette/mobile cependant.
+
 This repository is the Ionic project for App'ines technical test.
 It is an Ionic v8+ project, configured with Angular v18+ and TailwindCSS.
 
@@ -11,11 +13,6 @@ This project requires the following to be installed on your machine:
 - Node.js (recommended LTS version)
 - npm (installed with Node.js)
 - Ionic CLI
-
-
-Optional :
-- Xcode (See [Capacitor Environment Setup](https://capacitorjs.com/docs/getting-started/environment-setup))
-- Android Studio (See [Capacitor Environment Setup](https://capacitorjs.com/docs/getting-started/environment-setup))
 
 You can check if you already have Node.js and npm installed by running:
 
@@ -59,31 +56,3 @@ To run the project locally, execute:
 ```
 ionic serve
 ```
-
-To build the project and open it in a simulator or on a device:
-
-```
-ionic build
-npx cap open ios
-```
-
-or
-
-```
-npx cap open android
-```
-
-## Live Reload
-
-Live Reload is useful for debugging both the web portion of an app as well as native functionality on device hardware or simulators. Rather than deploy a new native binary every time you make a code change, it reloads the browser (or Web View) when changes in the app are detected.
-
-If running on a device, make sure it is on the same Wi-Fi network as your computer.
-
-See [Capacitor documentation](https://capacitorjs.com/docs/guides/live-reload)
-
-```
-ionic cap run android -l --external
-ionic cap run ios -l --external
-```
-
-Need Xcode & Android Studio (maybe you need to install [Java JDK](https://www.oracle.com/fr/java/technologies/downloads/#jdk17-mac))
