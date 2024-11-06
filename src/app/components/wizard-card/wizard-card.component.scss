@@ -1,0 +1,23 @@
+:host {
+    display: block;
+  }
+  
+.card {
+    @apply flex gap-4 bg-[#004755] border-[1px] border-[#4B91A1] rounded-xl p-[15px_20px] shadow-[0_4px_4px_0_#00000040] hover:cursor-pointer xl:w-2/3 xl:place-self-center;
+
+    .image-container {
+        @apply flex items-center justify-center self-center min-w-16 w-16 min-h-16 h-16 overflow-hidden rounded-full;
+    }
+
+    .name {
+        @apply font-['Montserrat_Alternates'] text-[#DBE6E9] text-base sm:text-xl font-bold leading-6;
+    }
+
+    .altered-names-container {
+        @apply flex flex-wrap;
+    }
+
+    .altered-names {
+        @apply text-[#53A7BC] font-medium font-['Montserrat'] pt-1 sm:pt-2;
+    }
+}

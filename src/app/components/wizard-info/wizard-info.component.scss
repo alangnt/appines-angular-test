@@ -1,0 +1,73 @@
+:host {
+    display: block;
+  }
+  
+.wizard {
+    @apply flex flex-col text-[#DBE6E9] font-['Montserrat'] min-h-screen;
+
+    .back {
+        @apply flex items-center justify-center w-8 h-8 sm:w-12 sm:h-12 absolute top-4 left-4 sm:top-8 sm:left-8 z-20 bg-[#2f4d53] border-[1px] border-[#1e424a] rounded-md;
+    }
+
+    .image-container {
+        @apply flex items-center justify-center w-full h-[400px] overflow-hidden backdrop-blur-sm relative;
+
+        &::after {
+            content: '';
+            @apply absolute w-full h-[74px] bottom-0 z-10 bg-gradient-to-b from-transparent to-[#132d32];
+        }
+
+        img {
+            @apply w-full;
+        }
+    }
+
+    .no-image {
+        @apply flex items-center justify-center h-[150px];
+    }
+
+    .general {
+        @apply flex flex-col gap-3 m-4 sm:m-8 xl:w-2/3 xl:self-center;
+
+        .name {
+            @apply font-['Montserrat_Alternates'] font-bold text-[28px] sm:text-3xl leading-9;
+        }
+
+        .altered-names-container {
+            @apply flex flex-wrap;
+
+            .altered-names {
+                @apply text-base sm:text-[18px] leading-6 font-[400];
+            }
+        }
+       
+        .vignette-container {
+            @apply flex flex-wrap gap-3;
+
+            li {
+                @apply text-base sm:text-lg leading-4 font-medium rounded-full p-[8px_12px] sm:p-[12px_16px];
+            }
+        }
+    }
+
+    .secondary {
+        @apply text-base sm:text-lg leading-6 bg-[#064754] border-[1px] border-[#3e808f] rounded-xl p-5 sm:p-6 m-4 sm:m-8 xl:w-2/3 xl:self-center;
+
+        .info-container {
+            @apply flex flex-col gap-4 sm:gap-5;
+
+            .divider {
+                @apply h-[1px] w-full bg-[#3e808f];
+            }
+
+            .info {
+                @apply flex justify-between;
+    
+                h2 {
+                    @apply text-[#53a7bc]
+                }
+            }
+        }
+
+    }
+}

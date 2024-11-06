@@ -1,0 +1,22 @@
+@if (wizard() && wizard().wizard === true) {
+  <div class="p-5 card" (click)="navigateToWizard()">
+    @if (wizard().image) {
+      <div class="image-container">
+        <img [src]="wizard().image" [alt]="wizard().name">
+      </div>
+    }
+  
+    <div>
+      <h2 class="name">{{wizard() ? wizard().name : 'No name available'}}</h2>
+      @if (wizard() && wizard().alternate_names.length > 0) {
+        <div class="altered-names-container">
+          @for (alternateName of wizard().alternate_names; track alternateName) {
+            <p class="altered-names">{{ alternateName }}{{ !isLast(alternateName) ? '&nbsp;·&nbsp;' : '' }}</p>
+          }
+        </div>
+      } @else {
+        <p class="altered-names">No alternate names</p>
+      }
+    </div>
+  </div>
+} 

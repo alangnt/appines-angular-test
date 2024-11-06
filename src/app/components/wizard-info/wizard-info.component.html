@@ -1,0 +1,84 @@
+<div class="wizard">
+  <a routerLink="/wizards" class="back"><chevron-left-icon></chevron-left-icon></a>
+
+  @if (wizard() && wizard().image) {
+    <div class="image-container">
+      <img [src]="wizard().image" [alt]="wizard().name">
+    </div>
+  } @else {
+    <p class="image-container no-image">No picture available</p>
+  }
+
+  <div class="general">
+    <h1 class="name">{{wizard() ? wizard().name : 'No name available'}}</h1>
+    @if (wizard() && wizard().alternate_names.length > 0) {
+      <div class="altered-names-container">
+        @for (alternateName of wizard().alternate_names; track alternateName) {
+          <p class="altered-names">{{ alternateName }}{{ !isLast(alternateName) ? '&nbsp;·&nbsp;' : '' }}</p>
+        }
+      </div>
+    } @else {
+      <p class="altered-names">No alternate names</p>
+    }
+    <ul class="vignette-container">
+      @if (wizard() && wizard().species) {
+        <li class="bg-[#c64191]">{{wizard().species.charAt(0).toUpperCase() + wizard().species.slice(1)}}</li>
+      }
+
+      @if (wizard() && wizard().wizard === true) {
+        <li class="bg-[#9c95dc]">Wizard</li>
+      }
+
+      @if (wizard() && wizard().house) {
+        <li [ngClass]="{'bg-[#740001]': wizard().house === 'Gryffindor', 'bg-[#1a472a]': wizard().house === 'Slytherin', 'bg-[#0e1a40]': wizard().house === 'Ravenclaw', 'bg-[#ecb939]': wizard().house === 'Hufflepuff'}">
+          {{wizard().house.charAt(0).toUpperCase() + wizard().house.slice(1)}}
+        </li>
+      }
+    </ul>
+  </div>
+
+  <div class="secondary">
+    <ul class="info-container">
+      <li class="info">
+        <h2>Gender</h2>
+        <p>{{wizard() && wizard().gender ? wizard().gender.charAt(0).toUpperCase() + wizard().gender.slice(1) : 'No information'}}</p>
+      </li>
+
+      <span class="divider"></span>
+
+      <li class="info">
+        <h2>Birth</h2>
+        <p>{{wizard() && wizard().dateOfBirth ? formatDateOfBirth(wizard().dateOfBirth) : 'No information'}}</p>
+      </li>
+
+      <span class="divider"></span>
+
+      <li class="info">
+        <h2>Ancestry</h2>
+        <p>{{wizard() && wizard().ancestry ? wizard().ancestry.charAt(0).toUpperCase() + wizard().ancestry.slice(1) : 'No information'}}</p>
+      </li>
+
+      <span class="divider"></span>
+
+      <li class="info">
+        <h2>Eye colour</h2>
+        <p>{{wizard() && wizard().eyeColour ? wizard().eyeColour.charAt(0).toUpperCase() + wizard().eyeColour.slice(1) : 'No information'}}</p>
+      </li>
+
+      <span class="divider"></span>
+
+      <li class="info">
+        <h2>Hair colour</h2>
+        <p>{{wizard() && wizard().hairColour ? wizard().hairColour.charAt(0).toUpperCase() + wizard().hairColour.slice(1) : 'No information'}}</p>
+      </li>
+
+      <span class="divider"></span>
+
+      <li class="info">
+        <h2>Patronus</h2>
+        <p>{{wizard() && wizard().patronus ? wizard().patronus.charAt(0).toUpperCase() + wizard().patronus.slice(1) : 'No information'}}</p>
+      </li>
+    </ul>
+  </div>
+</div>
+  
