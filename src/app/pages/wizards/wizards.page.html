@@ -16,8 +16,6 @@
 
     <div class="space-y-4">
       <ng-container>
-        <app-secret-card></app-secret-card>
-        
         @if (searchInput().length > 0) {
           @if (filteredWizards().length > 0) {
             @for (wizard of filteredWizards(); track wizard) {
@@ -27,6 +25,7 @@
             <p class="text-xl text-white text-center">No results found</p>
           }
         } @else {
+          <app-secret-card></app-secret-card>
           @for (wizard of wizards(); track wizard) {
             <app-wizard-card [wizard]="wizard"></app-wizard-card>
           }
