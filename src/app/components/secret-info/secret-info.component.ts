@@ -21,7 +21,7 @@ export class SecretInfoComponent {
     'dateOfBirth': 'August 18th 2000',
     'ancestry': 'Muggleborn',
     'eyeColour': 'Brown',
-    'hairColour': 'Half Brown, Half Bold',
+    'hairColour': 'Half Brown, Half Bald',
     'patronus': 'Turtle',
     'image': '/assets/secret-wizard.png',
   });
